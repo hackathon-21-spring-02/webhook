@@ -27,6 +27,6 @@ jobs:
       with:
         url: https://q.trap.jp/api/v3/webhooks/${{ secrets.WEBHOOK_ID }}
         method: 'POST'
-        customHeaders: "{'X-TRAQ-Signature': ${{ secrets.WEBHOOK_SECRET }} }"
+        customHeaders: '{"X-TRAQ-Signature": ${{ secrets.WEBHOOK_SECRET }} }'
         contentType: text/plain
         data: '\#\# ${{ env.TITLE }}\nリポジトリ: ${{ env.REPOSITORY }}\nissue作成者: ${{ env.AUTHOR }}'
