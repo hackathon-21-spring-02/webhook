@@ -23,8 +23,7 @@ jobs:
         TITLE: ':git_issue_opened: [${{ github.event.issue.title }}](${{ github.event.issue.html_url }}) が作成されました'
         REPOSITORY: ${{ github.repository }}
         AUTHOR: ${{ github.event.sender.login }}
-      uses: SSlime-s/traq-webhook@v1.1
+      uses: SSlime-s/traq-webhook@v2.0
       with:
         webhook-id: ${{ secrets.WEBHOOK_ID }}
         webhook-secret: ${{ secrets.WEBHOOK_SECRET }}
-        content: '\#\# ${{ env.TITLE }}\nリポジトリ: ${{ env.REPOSITORY }}\nissue作成者: ${{ env.AUTHOR }}'
