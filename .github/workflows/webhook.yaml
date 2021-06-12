@@ -23,10 +23,8 @@ jobs:
         TITLE: ':git_issue_opened: [${{ github.event.issue.title }}](${{ github.event.issue.html_url }}) が作成されました'
         REPOSITORY: ${{ github.repository }}
         AUTHOR: ${{ github.event.sender.login }}
-      uses: fjogeleit/http-request-action@master
+      uses: SSlime-s/traq-webhook
       with:
-        url: https://q.trap.jp/api/v3/webhooks/${{ secrets.WEBHOOK_ID }}
-        method: 'POST'
-        customHeaders: '{"X-TRAQ-Signature": "${{ secrets.WEBHOOK_SECRET }}" }'
-        contentType: text/plain
-        data: '\#\# ${{ env.TITLE }}\nリポジトリ: ${{ env.REPOSITORY }}\nissue作成者: ${{ env.AUTHOR }}'
+        webhook-id: ${{ secrets.WEBHOOK_ID }}
+        webhook-secret: ${{ secrets.WEBHOOK_SECRET }}
+        content: '\#\# ${{ env.TITLE }}\nリポジトリ: ${{ env.REPOSITORY }}\nissue作成者: ${{ env.AUTHOR }}'
