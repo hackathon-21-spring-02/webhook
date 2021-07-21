@@ -8,9 +8,7 @@ on:
     types: [created, edited]
   pull_request:
     types: [opened, edited, closed, review_requested]
-#   pull_request_review:
-#     types: [submitted]
-  pull_request_review_comment:
+  pull_request_review:
     types: [submitted]
 
 permissions: read-all
@@ -20,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Upload Message
-        uses: SSlime-s/traq-webhook@v4.6
+        uses: SSlime-s/traq-webhook@v4.7
         with:
           webhook-id: dummy ID
           webhook-secret: dummy SECRET
