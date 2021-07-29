@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Upload Message
-        uses: SSlime-s/traq-webhook@v4.7
+        uses: SSlime-s/traq-webhook@v4.8
         with:
           webhook-id: dummy ID
           webhook-secret: dummy SECRET
